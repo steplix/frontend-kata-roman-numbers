@@ -41,4 +41,12 @@ describe( "convert natural numbers to romans",() => {
         //then
         expect(convertToRoman(8)).toBe("VIII");
     })
+    test("convert 9 to roman IX", () => {
+        //given
+
+        //when
+        
+        //then
+        expect(convertToRoman(9)).toBe("IX");
+    })
 })
