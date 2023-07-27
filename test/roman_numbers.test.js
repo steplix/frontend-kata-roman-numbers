@@ -49,4 +49,28 @@ describe( "convert natural numbers to romans",() => {
         //then
         expect(convertToRoman(9)).toBe("IX");
     })
+    test("convert 40 to roman XL", () => {
+        //given
+
+        //when
+        
+        //then
+        expect(convertToRoman(40)).toBe("XL");
+    })
+    test("convert 90 to roman XC", () => {
+        //given
+
+        //when
+        
+        //then
+        expect(convertToRoman(90)).toBe("XC");
+    })
+    test("convert 113 to roman CXIII", () => {
+        //given
+
+        //when
+        
+        //then
+        expect(convertToRoman(113)).toBe("CXIII");
+    })
 })

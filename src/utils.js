@@ -1,4 +1,8 @@
 const numbs = {
+    M: 1000,
+    D:500,
+    C: 100,
+    L: 50,
     X: 10,
     V: 5,
     I: 1,
@@ -19,17 +23,33 @@ function sumNumbers(num){
   return result
 }
 function substractNumbers(num){
-  let result = 'I';
-  for (let generic in numbs) {
-    while(num < numbs[generic] && num >= 0 && numbs[generic]-num <2){
-      result += generic;
-      num -= numbs[generic];
-    }
+  let minDiff = Infinity;
+  let closerNum;
+  let result;
+
+  switch (true) {
+    case (num > 9):
+      result = 'X'
+      break;
+    default:
+      result = 'I'
+      break;
   }
-  return result
+
+  for (let generic in numbs) {
+    let actualDiff = Math.abs(numbs[generic] - num) ;
+
+    if (actualDiff < minDiff) {
+      minDiff = actualDiff;
+      closerNum = generic;
+    }
+
+   }
+   
+  return result + closerNum 
 }
 function convertToRoman(num) {
   return sumNumbers(num) || substractNumbers(num);
 }
 
-module.exports = convertToRoman
+module.exports = convertToRoman 
