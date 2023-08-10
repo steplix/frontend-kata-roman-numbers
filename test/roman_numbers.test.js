@@ -49,6 +49,7 @@ describe( "convert natural numbers to romans",() => {
         //then
         expect(convertToRoman(9)).toBe("IX");
     })
+  
     test("convert 40 to roman XL", () => {
         //given
 
@@ -72,5 +73,21 @@ describe( "convert natural numbers to romans",() => {
         
         //then
         expect(convertToRoman(113)).toBe("CXIII");
+    })
+    test("convert 490 to roman XD", () => {
+        //given
+
+        //when
+        
+        //then
+        expect(convertToRoman(490)).toBe("XD");
+    })
+    test("convert 14 to roman XIV", () => {
+        //given
+
+        //when
+        
+        //then
+        expect(convertToRoman(14)).toBe("XIV");
     })
 })

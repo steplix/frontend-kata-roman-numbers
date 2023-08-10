@@ -1,6 +1,6 @@
 const numbs = {
     M: 1000,
-    D:500,
+    D: 500,
     C: 100,
     L: 50,
     X: 10,
@@ -38,18 +38,28 @@ function substractNumbers(num){
 
   for (let generic in numbs) {
     let actualDiff = Math.abs(numbs[generic] - num) ;
-
+        console.log("actualDiff",actualDiff)
+        console.log("minDiff",minDiff)
     if (actualDiff < minDiff) {
-      minDiff = actualDiff;
-      closerNum = generic;
+        minDiff = actualDiff;
+        closerNum = generic;
+        
+        console.log("generic",generic)
     }
 
    }
-   
+   console.log(result + closerNum)
   return result + closerNum 
 }
 function convertToRoman(num) {
   return sumNumbers(num) || substractNumbers(num);
 }
+
+//315
+//300 10 5
+//ccc x v
+
+convertToRoman(40)
+convertToRoman(14)
 
 module.exports = convertToRoman 
