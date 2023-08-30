@@ -74,13 +74,13 @@ describe( "convert natural numbers to romans",() => {
         //then
         expect(convertToRoman(113)).toBe("CXIII");
     })
-    test("convert 490 to roman XD", () => {
+    test("convert 490 to roman CDXC", () => {
         //given
 
         //when
         
         //then
-        expect(convertToRoman(490)).toBe("XD");
+        expect(convertToRoman(490)).toBe("CDXC");
     })
     test("convert 14 to roman XIV", () => {
         //given
@@ -89,5 +89,29 @@ describe( "convert natural numbers to romans",() => {
         
         //then
         expect(convertToRoman(14)).toBe("XIV");
+    })
+    test("convert 383 to roman CCCLXXXIII", () => {
+        //given
+
+        //when
+        
+        //then
+        expect(convertToRoman(383)).toBe("CCCLXXXIII");
+    })
+    test("convert 273 to roman CCLXXIII", () => {
+        //given
+
+        //when
+        
+        //then
+        expect(convertToRoman(273)).toBe("CCLXXIII");
+    })   
+    test("convert 1849 to roman MDCCCXLIX", () => {
+        //given
+
+        //when
+        
+        //then
+        expect(convertToRoman(1849)).toBe("MDCCCXLIX");
     })
 })

@@ -9,6 +9,7 @@ const numbs = {
 }
 
 function sumNumbers(num){
+    if (num === 0) return
   let result = '';
   let count = 0;
   for (let generic in numbs) {
@@ -23,11 +24,16 @@ function sumNumbers(num){
   return result
 }
 function substractNumbers(num){
+    if (num === 0) return
+    
   let minDiff = Infinity;
   let closerNum;
   let result;
 
   switch (true) {
+    case (num >100):
+        result =  'C'
+        break;
     case (num > 9):
       result = 'X'
       break;
@@ -38,28 +44,31 @@ function substractNumbers(num){
 
   for (let generic in numbs) {
     let actualDiff = Math.abs(numbs[generic] - num) ;
-        console.log("actualDiff",actualDiff)
-        console.log("minDiff",minDiff)
     if (actualDiff < minDiff) {
         minDiff = actualDiff;
         closerNum = generic;
         
-        console.log("generic",generic)
     }
 
    }
-   console.log(result + closerNum)
   return result + closerNum 
 }
-function convertToRoman(num) {
-  return sumNumbers(num) || substractNumbers(num);
-}
+const convertToRoman = (num) => splitNumbers(num).map(num => sumNumbers(num) || substractNumbers(num)).join('');
 
-//315
+//310
 //300 10 5
 //ccc x v
 
-convertToRoman(40)
-convertToRoman(14)
+function splitNumbers(number) {
+    const digits = Array.from(String(number), Number);
+    const parts = [];
+    for (let i = 0; i < digits.length; i++) {
+      const value = digits[i] * Math.pow(10, digits.length - i - 1);
+      parts.push(value);
+    }
+    return parts;
+}
+
+  
 
 module.exports = convertToRoman 
